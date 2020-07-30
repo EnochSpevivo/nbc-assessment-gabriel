@@ -4,7 +4,9 @@ import moment from "moment";
 
 import "bulma/css/bulma.css";
 import "typeface-montserrat";
-import "./App.css";
+import "styles/App.scss";
+
+import Table from "components/Table.js";
 
 function App() {
   const [priceData, setPriceData] = useState([]);
@@ -54,30 +56,9 @@ function App() {
 
   return (
     <div className="container">
-      <table className="table">
-        {/* TODO: Datum? Really? */}
-        <thead>
-          {/* TODO: Maybe this should be rendered from the object keys, so it's programmatic? */}
-          <tr>
-            <th>Date</th>
-            <th>Day of Week</th>
-            <th>Price</th>
-            <th>Direction</th>
-            <th>Change</th>
-          </tr>
-        </thead>
-        <tbody>
-          {priceData.map((priceDatum) => (
-            <tr>
-              <td>{priceDatum.date}</td>
-              <td>{priceDatum.dayOfWeek}</td>
-              <td>{priceDatum.price}</td>
-              <td>{priceDatum.direction}</td>
-              <td>{priceDatum.change}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="box">
+        <Table priceData={priceData}></Table>
+      </div>
     </div>
   );
 }
