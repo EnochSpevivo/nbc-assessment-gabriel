@@ -1,3 +1,22 @@
+$hover-color: #dbdbdb;
+$click-color: #c2bcbc;
+
 table {
   width: 100%;
+}
+
+tbody {
+  tr {
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $click-color;
+      color: white;
+    }
+  }
 }

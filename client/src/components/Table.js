@@ -1,6 +1,12 @@
 import React from "react";
 
+import "styles/Table.scss";
+
 function Table(props) {
+  const handlePriceClick = () = {
+
+  }
+  
   return (
     <table className="table">
       {/* TODO: Datum? Really? */}
@@ -16,7 +22,7 @@ function Table(props) {
       </thead>
       <tbody>
         {props.priceData.map((priceDatum) => (
-          <tr>
+          <tr onClick={handlePriceClick}>
             <td>{priceDatum.date}</td>
             <td>{priceDatum.dayOfWeek}</td>
             <td>{priceDatum.price}</td>
