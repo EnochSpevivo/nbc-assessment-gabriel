@@ -19,4 +19,23 @@ tbody {
       color: white;
     }
   }
+
+  .table__flex {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.icon__up {
+  color: rgb(25, 185, 25);
+}
+
+.icon__down {
+  color: red;
+}
+
+.icon__same {
+  color: rgb(255, 221, 68);
 }
