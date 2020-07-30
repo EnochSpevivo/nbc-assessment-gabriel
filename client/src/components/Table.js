@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,6 +23,8 @@ function Table(props) {
           return <FontAwesomeIcon className="icon__down" icon={faArrowDown} />;
         case "same":
           return <FontAwesomeIcon className="icon__same" icon={faCircle} />;
+        default:
+          return;
       }
     } else if (priceProperty === "change") {
       switch (direction) {
@@ -32,6 +34,8 @@ function Table(props) {
           return <FontAwesomeIcon className="icon__down" icon={faMinus} />;
         case "same":
           return <FontAwesomeIcon className="icon__same" icon={faCircle} />;
+        default:
+          return;
       }
     } else if (priceProperty === "tableRow") {
       switch (direction) {
@@ -41,6 +45,8 @@ function Table(props) {
           return "icon__down";
         case "same":
           return "icon__same";
+        default:
+          return;
       }
     }
 
@@ -48,7 +54,7 @@ function Table(props) {
   };
 
   const handlePriceClick = async (priceDatum) => {
-    const result = await axios("/save_hits", {
+    await axios("/save_hits", {
       params: {
         priceDate: priceDatum.date,
         priceClick: priceDatum.price,

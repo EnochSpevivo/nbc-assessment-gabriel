@@ -1,7 +1,14 @@
-## Running the app
+## About
 
 - This is a simple React app with a simple Express server. The Express server's sole purpose is to handle the `GET` request to `save_hits?priceDate=<date>&priceClick=<price>&previousPriceClick=<previousPriceClick>`.
   - Whenever you click a row, and the request is made to `/save_hits`, the endpoint will return all the query params that it received, so that you can view `priceDate`, `priceClick`, and `previousPriceClick`;
+
+## Running the App
+
+- run `npm run install-all && npm run dev-app` from the root directory.
+  - `npm run install-all` is a convenience script that runs `npm install` in the Express app in the remote directory, and also runs `npm install` in the `client` folder, which contains the React app
+  - The `npm run dev-app` is another convenience script I implemented that will start both the Express server and the React app.
+  - If, for any reason, you want to run the Express and React apps separately (perhaps because you want them running in separate command line windows), you will instead need to run `npm install && npm run` in the root directory, and `npm install && npm run` within `client`.
 
 ## Implementation Notes
 
